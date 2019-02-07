@@ -4,13 +4,12 @@
 	<name>[BBCode] NoBreak</name>
 	<id>LiamHammett:NoBreak</id>
 	<type>modification</type>
-	<version>1.0</version>
-    <install for="2.0 - 2.0.99">
-	    <readme type="file" parsebbc="true">readme.txt</readme>
+	<version>1.5</version>
+    <install for="2.0 RC2">
 		<modification>smf-2.0.xml</modification>
 		<require-file name="nobreak.gif" destination="$imagesdir/bbc" />
 	</install>
-	<uninstall for="2.0 - 2.0.99">
+	<uninstall for="2.0 RC2">
 		<modification reverse="true">smf-2.0.xml</modification>
 		<remove-file name="$imagesdir/bbc/nobreak.gif" />
 	</uninstall>

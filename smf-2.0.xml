@@ -34,14 +34,26 @@
 ]]></add>
 		</operation>
 </file>
-<file name="$sourcedir/Subs-Editor.php">
-	<operation>
-		<search position="after"><![CDATA['move' => array('code' => 'move', 'before' => '[move]', 'after' => '[/move]', 'description' => $txt['marquee']),]]></search>
-		<add><![CDATA[
-			         'nobreak' => array('code' => 'nobreak', 'before' => '[nobreak]', 'after' => '[/nobreak]', 'description' => $txt['nobreak']),
+	<file name="$sourcedir/Subs-Editor.php">
+		<operation>
+			<search position="before"><![CDATA[array(
+				'image' => move,
+				'code' => 'move',
+				'before' => '[move]',
+				'after' => '[/move]',
+				'description' => $txt['marquee']
+			),]]></search>
+			<add><![CDATA[
+			array(
+				'image' => 'nobreak,
+				'code' => 'nobreak',
+				'before' => '[nobreak]',
+				'after' => '[/nobrak]',
+				'description' => $txt['nobreak']
+			),
 ]]></add>
-	</operation>
-</file>
+		</operation>
+	</file>
    <file name="$languagedir/Modifications.english.php">
       <operation>
          <search position="end" />
