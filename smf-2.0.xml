@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+	<name>[BBCode] NoBreak</name>
+	<id>LiamHammett:NoBreak</id>
+	<version>1.5</version>
+	<homepage>https://www.liamhammett.com/</homepage>
+	<file name="$sourcedir/Subs.php">
+		<operation>
+			<search position="replace"><![CDATA[			array(
+				'tag' => 'move',
+				'before' => '<marquee>',
+				'after' => '</marquee>',
+				'block_level' => true,
+			),
+]]></search>
+			<add><![CDATA[			array(
+				'tag' => 'move',
+				'before' => '<marquee>',
+				'after' => '</marquee>',
+				'block_level' => true,
+			),
+         		array(
+       		     'tag' => 'nobreak',
+        		    'before' => '<span style="white-space: nowrap;">',
+       		     'after' => '</span>',
+       		  ),
+			array(
+				'tag' => 'wbr',
+				'type' => 'closed',
+				'content' => '<wbr />',
+				'block_level' => true,
+			),
+]]></add>
+		</operation>
+</file>
+<file name="$sourcedir/Subs-Editor.php">
+	<operation>
+		<search position="after"><![CDATA['move' => array('code' => 'move', 'before' => '[move]', 'after' => '[/move]', 'description' => $txt['marquee']),]]></search>
+		<add><![CDATA[
+			         'nobreak' => array('code' => 'nobreak', 'before' => '[nobreak]', 'after' => '[/nobreak]', 'description' => $txt['nobreak']),
+]]></add>
+	</operation>
+</file>
+   <file name="$languagedir/Modifications.english.php">
+      <operation>
+         <search position="end" />
+         <add><![CDATA[$txt['nobreak'] = 'Nobreak';]]></add>
+      </operation>
+</file>
+</modification>
